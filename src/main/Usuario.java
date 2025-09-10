@@ -21,9 +21,11 @@ public class Usuario {
 
     public void adicionarViagem(Viagens v,Funcao funcao) {
         historico.add(v);
-        
-        if(!funcoes.contains(funcao)) {
-        	funcoes.add(funcao); // add se n tiver na lista
+    }
+    
+    public void adicionarFuncao(Funcao f) {
+        if (!funcoes.contains(f)) {
+            funcoes.add(f);
         }
     }
     
@@ -52,7 +54,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario: \nnome: "+nome +", funcao: " +getFuncao();
+        return "USUARIO: "+nome +" || FUNCAO: " +getFuncoes();
     }
 }
 

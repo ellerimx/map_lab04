@@ -37,10 +37,10 @@ public class Viagens {
 
     @Override
     public String toString() {
-        return "Viagem: \n" +
-                "{ Origem = " + origem +", destino = " + destino+ ", horario = " + horario + ", passageiro =" + passageiro.getNome() +
-                ", \nmotorista = " + motorista.getNome() + ", veiculo =" + veiculo +", valor = R$" + valor +
-                ", forma de pagamento = " + pagamento +", avaliacao = " + avaliacao + " }";
+        return "\nHistorico de viagem: \n" +
+                "- Origem = " + origem +"\n- Destino = " + destino+ "\n- Horario = " + horario + "\n- Passageiro = " + passageiro.getNome() +
+                "\n- Motorista = " + motorista.getNome() + "\n- Veiculo = " + veiculo +"\n- Valor = R$" + valor +
+                "\n- Forma de pagamento = " + pagamento +"\n- Avaliacao da corrida = " + avaliacao + "\n";
     }
 }
 
