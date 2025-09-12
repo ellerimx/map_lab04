@@ -17,7 +17,13 @@ public class Passageiro extends Usuario {
     }
 
     public void addPgto(Pagamento p) {
-    	formasPagamento.add(p);
+        // validação
+        if (p == null) throw new NullPointerException("Forma de pagamento não pode ser nula.");
+        // evitando duplicidade
+        if (formasPagamento.contains(p)) {
+            throw new IllegalArgumentException("Esta forma de pagamento já está cadastrada para o passageiro.");
+        }
+        formasPagamento.add(p);
     }
     
     public List<Pagamento> getFormasPagamento() {
@@ -26,7 +32,10 @@ public class Passageiro extends Usuario {
     
     //padrao creator
     public static Passageiro criarPassageiro(int id, String nome) {
-    	return new Passageiro(id, nome);
+        if (id <= 0) throw new IllegalArgumentException("ID do passageiro deve ser positivo.");
+        if (nome == null || nome.isBlank()) throw new IllegalArgumentException("Nome do passageiro é obrigatório.");
+        return new Passageiro(id, nome);
     }
 }
+
 

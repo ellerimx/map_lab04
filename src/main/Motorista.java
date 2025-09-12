@@ -19,6 +19,16 @@ public class Motorista extends Usuario {
 
     //creator p criar veiculo
     public Veiculo criarVeiculo(String placa, String modelo) {
+        // validação
+        if (placa == null || placa.isBlank()) throw new IllegalArgumentException("Placa do veículo é obrigatória.");
+        if (modelo == null || modelo.isBlank()) throw new IllegalArgumentException("Modelo do veículo é obrigatório.");
+        // impede placas repetidas motorista
+        for (Veiculo veiculoExistente : veiculos) {
+            if (placa.equalsIgnoreCase(veiculoExistente.getPlaca())) {
+                throw new IllegalArgumentException("Veículo com a placa '" + placa + "' já cadastrado para este motorista.");
+            }
+        }
+
         Veiculo v = new Veiculo(placa, modelo);
         veiculos.add(v);
         return v;
@@ -33,3 +43,4 @@ public class Motorista extends Usuario {
     	return new Motorista(id,nome);
     }
 }
+
