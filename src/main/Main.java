@@ -52,7 +52,7 @@ public class Main {
         System.out.println("\n");
 
         System.out.println("#### Histórico do Jose como passageiro ####");
-        System.out.println(m2);
+        System.out.println(p2);
         m2.getHistorico().forEach(System.out::println);
         System.out.println("\n    -> administrador dessa corrida:");
         a1.gerenciarUsuarios();
